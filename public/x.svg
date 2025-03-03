@@ -1,0 +1,13 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <line x1="30" y1="30" x2="90" y2="90" stroke="#ff0055" stroke-width="6" />
+    <line x1="90" y1="30" x2="30" y2="90" stroke="#ff0055" stroke-width="6" />
+    <filter id="neon-glow-red">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+    <line x1="30" y1="30" x2="90" y2="90" stroke="#ff0055" stroke-width="6" filter="url(#neon-glow-red)" />
+    <line x1="90" y1="30" x2="30" y2="90" stroke="#ff0055" stroke-width="6" filter="url(#neon-glow-red)" />
+</svg>

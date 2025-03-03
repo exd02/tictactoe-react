@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+:root {
+    --neon-pink: #ff0055;
+    --neon-blue: #00ffff;
+    --dark-bg: #16181D;
+    --white: #ffffff;
+    --winner-bg: orange;
+    --winner-border: red;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    height: 100vh;
+    margin: 0;
+    font-family: 'Tilt Neon', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    text-shadow: 
+        0 0 5px var(--white), 
+        0 0 10px var(--white), 
+        0 0 20px var(--neon-pink), 
+        0 0 25px var(--neon-pink), 
+        0 0 30px var(--neon-blue), 
+        0 0 35px var(--neon-blue), 
+        0 0 40px var(--neon-blue);
+}
+
+table {
+    border-collapse: collapse;
+    width: 90vmin;
+    max-width: 500px;
+    height: 90vmin;
+    max-height: 500px;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+
+table td {
+    width: 33.33%;
+    height: 33.33%;
+    border: 2px solid var(--white);
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    position: relative;
+}
+
+table tr:first-child td {
+    border-top: none;
+}
+table tr:last-child td {
+    border-bottom: none;
+}
+table td:first-child {
+    border-left: none;
+}
+table td:last-child {
+    border-right: none;
+}
+
+table td button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+table td button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winner {
+    background-color: var(--winner-bg);
+    border-color: var(--winner-border);
+}
+
+@keyframes winner-glow {
+    from {
+        box-shadow: 0 0 10px var(--winner-border);
+    }
+    to {
+        box-shadow: 0 0 20px var(--winner-bg);
+    }
+}
+
+.reset {
+    border: 2px solid var(--white);
+    background-color: transparent;
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.reset:hover {
+    background-color: var(--neon-pink);
+    border-color: var(--neon-blue);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    table {
+        width: 90vmin;
+        height: 90vmin;
+    }
+    .reset {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
